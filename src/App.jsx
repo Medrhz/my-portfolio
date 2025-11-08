@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import avatarImg from "./assets/images/avatar.jpg";
 // import Freelance from "./components/Freelance";
 
-import BusinessSolutions from "./components/BusinessSolutions";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import BackLighit from "./components/BackLighit";
+import BusinessSolutions from "./components/BusinessSolutions.jsx";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import Projects from "./components/Projects.jsx";
+import Skills from "./components/Skills.jsx";
+import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer.jsx";
+import BackLighit from "./components/BackLighit.jsx";
 import Experience from "./components/Experience.jsx";
-const RESUME_URL = "./pdf/CV_2025-11-08_Mohamed_RHZIZA (1).pdf";
+const RESUME_URL = "/CV_2025-11-08_Mohamed_RHZIZA (1).pdf";
 // const AVATAR = "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&auto=format&fit=crop";
 const AVATAR = avatarImg;
 
