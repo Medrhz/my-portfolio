@@ -18,10 +18,13 @@ export default defineConfig([
         sourceType: "module",
       },
     },
+    plugins: { import: importPlugin },
     rules: {
       "no-unused-vars": ["warn", { varsIgnorePattern: "^[A-Z_]" }],
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
+      "import/no-unresolved": "error",
+      "import/named": "error",
     },
     // parserOptions: {
     //   ecmaVersion: 2020,
