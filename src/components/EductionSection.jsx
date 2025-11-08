@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Code2, Laptop, Layers } from "lucide-react";
 export default function EductionSection({ educationData }) {
   return (
     <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:shadow-[0_0_20px_rgba(147,51,234,0.2)] transition-all duration-300">
@@ -35,11 +36,32 @@ export default function EductionSection({ educationData }) {
         {/* BONUS: Formations complémentaires */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 2.5 }} viewport={{ once: true }} className="pl-6">
           {/* <div className="pl-6 mt-8"> */}
-          <h4 className="font-medium text-white">Formations Complémentaires</h4>
+          {/* <h4 className="font-medium text-white">Formations Complémentaires</h4>
           <ul className="text-sm text-slate-400 mt-2 space-y-2">
             <li>✅ Formation Full-Stack — Centre MAHARATE, Rabat (2022 – 2023)</li>
             <li>✅ Responsive Web Design — freeCodeCamp (2022)</li>
             <li>✅ Composants de l’ordinateur — Plateforme EDRAAK (2022)</li>
+          </ul> */}
+          <h4 className="font-medium text-white">Additional Training</h4>
+          <ul className="text-sm text-slate-400 mt-4 space-y-3">
+            <li className="flex items-center gap-3">
+              <Code2 className="text-indigo-400" size={16} />
+              <span>
+                <span className="text-white font-medium">Full-Stack Development</span> — MAHARATE Center, Rabat
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Layers className="text-indigo-400" size={16} />
+              <span>
+                <span className="text-white font-medium">JavaScript Algorithms & Data Structures</span> — freeCodeCamp
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Laptop className="text-indigo-400" size={16} />
+              <span>
+                <span className="text-white font-medium">Responsive Web Design</span> — freeCodeCamp
+              </span>
+            </li>
           </ul>
           {/* </div> */}
         </motion.div>
