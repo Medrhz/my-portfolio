@@ -65,10 +65,12 @@ export default function Projects() {
       tech: ["Spring Boot", "Angular", "TailwindCSS", "MySQL"],
     },
     {
-      title: "Academic & Professional Projects – ISMAGI",
-      desc: "Various academic and professional projects developed during studies at the ISMAGI Institute, covering software engineering, databases, and full-stack development.",
-      tech: ["HTML", "CSS", "JavaScript", "Java", "MySQL"],
+      title: "SAFAR – Transport Agency Management System",
+      desc: "Developed a full web application for managing a transport agency’s daily operations — including trip bookings, driver leave management, and route tracking. The frontend was designed with HTML, CSS, JavaScript, and Bootstrap, while the backend handled data and business logic using PHP and MySQL.",
+      tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+      // details: "Goal: Automate reservations, leaves, and driver management. 📅 Period: July 2023 – December 2023 | 📍 Rabat",
     },
+
     {
       title: "Learning Projects & Mini CRUD Apps",
       desc: "In addition to professional work, I built several small projects for learning purposes — including CRUD apps, API testing, and front–back integration experiments.",
