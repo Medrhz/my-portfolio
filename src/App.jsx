@@ -11,7 +11,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackLighit from "./components/BackLighit";
-import Experience from "./components/EXPERIENCE";
+import Experience from "./components/Experience.jsx";
 const RESUME_URL = "/resume.pdf";
 // const AVATAR = "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&auto=format&fit=crop";
 const AVATAR = avatarImg;
