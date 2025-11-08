@@ -18,7 +18,7 @@ export default function ProjectCad({ project, index }) {
         ))}
       </div>
       <div className="flex justify-between text-sm text-indigo-400">
-        <a href="#">🔗 Repo</a>
+        <a href={project.link}>🔗 Repo</a>
         <a href="#">🚀 Live Demo</a>
       </div>
       {/* </div> */}
