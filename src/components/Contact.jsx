@@ -46,10 +46,10 @@ export default function Contact() {
             </h3>
             <ul className="space-y-5 text-slate-300 text-sm">
               <li className="flex items-center gap-3">
-                <Mail className="text-indigo-400" size={18} /> you@example.com
+                <Mail className="text-indigo-400" size={18} /> mohamed.rhziza@gmail.com
               </li>
               <li className="flex items-center gap-3">
-                <MapPin className="text-indigo-400" size={18} /> Oujda, Morocco
+                <MapPin className="text-indigo-400" size={18} /> Sale, Morocco
               </li>
             </ul>
 
