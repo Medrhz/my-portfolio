@@ -1,0 +1,11 @@
+<!-- save as public/favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- خلفية بيضاء ناعمة -->
+  <rect width="64" height="64" rx="12" fill="#f8fafc"/>
+  
+  <!-- الحروف MR -->
+  <text x="50%" y="56%" text-anchor="middle" fill="#6366f1"
+        font-family="Poppins, Inter, sans-serif"
+        font-weight="700"
+        font-size="26">MR</text>
+</svg>
