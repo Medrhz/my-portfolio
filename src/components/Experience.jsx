@@ -39,15 +39,16 @@ function Experience() {
       desc: "Prepared and delivered computer science courses, introduced students to educational robotics, and created customized teaching materials.",
     },
     {
-      title: "Full-Stack Web Developer (Freelance)",
-      place: "Self-taught & Real-world Projects — Since 2023",
-      desc: "Developed custom web solutions including front-end and back-end design, API integrations, e-commerce platforms, and interactive dashboards.",
-    },
-    {
       title: "Programming Instructor",
       place: "Polyvalence Institute, Salé — Since 2023",
       desc: "Taught programming languages such as C, Java, Python, PHP, SQL, HTML, CSS, and JavaScript. Led collaborative projects and created interactive teaching resources.",
     },
+    {
+      title: "Full-Stack Web Developer (Freelance)",
+      place: "Self-taught & Real-world Projects — Since 2023",
+      desc: "Developed custom web solutions including front-end and back-end design, API integrations, e-commerce platforms, and interactive dashboards.",
+    },
+
     {
       title: "Freelance E-commerce Developer",
       place: "Salé — 2022 – 2023",
