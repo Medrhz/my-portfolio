@@ -54,13 +54,17 @@ export default function Contact() {
             </ul>
 
             <div className="mt-8 flex gap-6">
-              <a href="https://linkedin.com/in/your" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
+              <a
+                href="https://www.linkedin.com/in/mohamed-rhziza-531892257/"
+                target="_blank"
+                rel="noreferrer"
+                className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
                 <Linkedin className="text-indigo-400 hover:text-white transition" size={22} />
               </a>
-              <a href="https://github.com/your" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
+              <a href="https://github.com/Medrhz" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
                 <Github className="text-indigo-400 hover:text-white transition" size={22} />
               </a>
-              <a href="mailto:you@example.com" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
+              <a href="mohamed.rhziza@gmail.com" className="p-3 bg-white/5 rounded-full border border-white/10 hover:bg-white/10 transition">
                 <Mail className="text-indigo-400 hover:text-white transition" size={22} />
               </a>
             </div>
