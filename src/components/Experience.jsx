@@ -2,34 +2,63 @@ import { motion } from "framer-motion";
 import EductionSection from "./EductionSection";
 
 function Experience() {
+  // const experienceData = [
+  //   {
+  //     title: "Enseignant d’informatique & Robotique",
+  //     place: "Institut Al Wafaa, Salé — 2024 – 2025",
+  //     desc: "Préparation et animation des cours d’informatique, initiation à la robotique éducative et élaboration de supports pédagogiques adaptés.",
+  //   },
+  //   {
+  //     title: "Développeur Web Full-Stack Freelance",
+  //     place: "Auto-formation & Réalisations réelles — Depuis 2023",
+  //     desc: "Réalisation de projets personnalisés : conception front-end & back-end, intégration d’APIs, e-commerce, et dashboards interactifs.",
+  //   },
+  //   {
+  //     title: "Enseignant en Développement Informatique",
+  //     place: "Institut Polyvalence, Salé — Depuis 2023",
+  //     desc: "Enseignement des langages : C, Java, Python, PHP, SQL, HTML/CSS/JS. Projets collaboratifs et supports pédagogiques interactifs.",
+  //   },
+  //   {
+  //     title: "Création de sites e-commerce (Freelancer)",
+  //     place: "Salé — 2022 – 2023",
+  //     desc: "Développement de boutiques en ligne via CMS, intégration de paiements simulés, et personnalisation UX.",
+  //   },
+  // ];
+
+  // const educationData = [
+  //   { title: "Cycle Ingénieur d’État — Développement Informatique", place: "ISMAGI, Rabat — Depuis 2024" },
+  //   { title: "Licence Professionnelle — Développement Web & Mobile", place: "ISMAGI, Rabat — 2023 – 2024" },
+  //   { title: "Technicien Spécialisé en Développement Informatique", place: "Pro-Systems, Rabat — 2021 – 2023" },
+  //   { title: "Technicien en Contrôle Qualité Automobile", place: "ISMA, Salé — 2017 – 2019" },
+  // ];
+
   const experienceData = [
     {
-      title: "Enseignant d’informatique & Robotique",
-      place: "Institut Al Wafaa, Salé — 2024 – 2025",
-      desc: "Préparation et animation des cours d’informatique, initiation à la robotique éducative et élaboration de supports pédagogiques adaptés.",
+      title: "Computer Science & Robotics Instructor",
+      place: "Al Wafaa Institute, Salé — 2024 – 2025",
+      desc: "Prepared and delivered computer science courses, introduced students to educational robotics, and created customized teaching materials.",
     },
     {
-      title: "Développeur Web Full-Stack Freelance",
-      place: "Auto-formation & Réalisations réelles — Depuis 2023",
-      desc: "Réalisation de projets personnalisés : conception front-end & back-end, intégration d’APIs, e-commerce, et dashboards interactifs.",
+      title: "Full-Stack Web Developer (Freelance)",
+      place: "Self-taught & Real-world Projects — Since 2023",
+      desc: "Developed custom web solutions including front-end and back-end design, API integrations, e-commerce platforms, and interactive dashboards.",
     },
     {
-      title: "Enseignant en Développement Informatique",
-      place: "Institut Polyvalence, Salé — Depuis 2023",
-      desc: "Enseignement des langages : C, Java, Python, PHP, SQL, HTML/CSS/JS. Projets collaboratifs et supports pédagogiques interactifs.",
+      title: "Programming Instructor",
+      place: "Polyvalence Institute, Salé — Since 2023",
+      desc: "Taught programming languages such as C, Java, Python, PHP, SQL, HTML, CSS, and JavaScript. Led collaborative projects and created interactive teaching resources.",
     },
     {
-      title: "Création de sites e-commerce (Freelancer)",
+      title: "Freelance E-commerce Developer",
       place: "Salé — 2022 – 2023",
-      desc: "Développement de boutiques en ligne via CMS, intégration de paiements simulés, et personnalisation UX.",
+      desc: "Built online stores using CMS platforms, integrated simulated payment systems, and customized user experiences.",
     },
   ];
-
   const educationData = [
-    { title: "Cycle Ingénieur d’État — Développement Informatique", place: "ISMAGI, Rabat — Depuis 2024" },
-    { title: "Licence Professionnelle — Développement Web & Mobile", place: "ISMAGI, Rabat — 2023 – 2024" },
-    { title: "Technicien Spécialisé en Développement Informatique", place: "Pro-Systems, Rabat — 2021 – 2023" },
-    { title: "Technicien en Contrôle Qualité Automobile", place: "ISMA, Salé — 2017 – 2019" },
+    { title: "Engineering Cycle — Software Development", place: "ISMAGI, Rabat — Since 2024" },
+    { title: "Professional Bachelor's Degree — Web & Mobile Development", place: "ISMAGI, Rabat — 2023 – 2024" },
+    { title: "Advanced Technician Diploma — Software Development", place: "Pro-Systems, Rabat — 2021 – 2023" },
+    { title: "Technician Diploma — Automotive Quality Control", place: "ISMA, Salé — 2017 – 2019" },
   ];
 
   return (
