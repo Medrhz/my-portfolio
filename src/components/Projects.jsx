@@ -71,6 +71,13 @@ export default function Projects() {
       tech: ["Java", "Spring Boot", "PHP", "Laravel", "React", "Angular", "Vue.js", "MySQL"],
       link: "https://github.com/Medrhz?tab=repositories",
     },
+
+    {
+      title: "Blood Bank & Donor Management System",
+      desc: "Blood Bank and Donor Management System is a web-based application. The persons who like to donate blood register in the Blood Bank application.  The persons in need of blood search for the persons having the same blood group and within the city",
+      tech: ["PHP", "MySQL8", "PHP", "HTML", "AJAX", "JQUERY", "JAVASCRIPT"],
+      link: "https://github.com/Medrhz?tab=repositories",
+    },
   ];
   return (
     <div>
