@@ -45,14 +45,20 @@ export default function Projects() {
   // ];
   const projects = [
     {
-      title: "Stock & Sales Management System (Light ERP)",
-      desc: "A full web-based application for managing commercial operations in a dealership — including clients, suppliers, sales, orders, and inventory. Integrated an interactive dashboard (AdminLTE) with automated stock alerts.",
-      tech: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"],
-    },
-    {
       title: "SAFAR – Transport Agency Management System (Final Year Project)",
       desc: "Developed a complete web application for managing transport agency operations such as bookings, drivers, leaves, and trip tracking. Includes three distinct spaces: client, driver, and admin.",
       tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "UML"],
+    },
+    {
+      title: "Blood Bank & Donor Management System",
+      desc: "Blood Bank and Donor Management System is a web-based application. The persons who like to donate blood register in the Blood Bank application.  The persons in need of blood search for the persons having the same blood group and within the city",
+      tech: ["PHP", "MySQL8", "PHP", "HTML", "AJAX", "JQUERY", "JAVASCRIPT"],
+      link: "https://github.com/Medrhz?tab=repositories",
+    },
+    {
+      title: "Stock & Sales Management System (Light ERP)",
+      desc: "A full web-based application for managing commercial operations in a dealership — including clients, suppliers, sales, orders, and inventory. Integrated an interactive dashboard (AdminLTE) with automated stock alerts.",
+      tech: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"],
     },
     {
       title: "Inventory Management Application",
@@ -69,13 +75,6 @@ export default function Projects() {
       title: "Learning Projects & Mini CRUD Apps",
       desc: "In addition to professional work, I built several small projects for learning purposes — including CRUD apps, API testing, and front–back integration experiments.",
       tech: ["Java", "Spring Boot", "PHP", "Laravel", "React", "Angular", "Vue.js", "MySQL"],
-      link: "https://github.com/Medrhz?tab=repositories",
-    },
-
-    {
-      title: "Blood Bank & Donor Management System",
-      desc: "Blood Bank and Donor Management System is a web-based application. The persons who like to donate blood register in the Blood Bank application.  The persons in need of blood search for the persons having the same blood group and within the city",
-      tech: ["PHP", "MySQL8", "PHP", "HTML", "AJAX", "JQUERY", "JAVASCRIPT"],
       link: "https://github.com/Medrhz?tab=repositories",
     },
   ];
