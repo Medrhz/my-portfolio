@@ -132,14 +132,14 @@ export default function PFEProject() {
               <FileText size={16} />
               Consulter le rapport PFE
             </a>
-            <a
+            {/* <a
               href={SOURCE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-white/20 text-slate-200 hover:bg-white/10 px-5 py-2 rounded-full flex items-center justify-center gap-2 text-sm font-medium transition">
               <Github size={16} />
               Voir le code source
-            </a>
+            </a> */}
           </div>
         </motion.div>
 
