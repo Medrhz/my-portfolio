@@ -126,6 +126,7 @@ export default function PFEProject() {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <a
+              disabled
               href={REPORT_URL}
               target="_blank"
               rel="noopener noreferrer"
