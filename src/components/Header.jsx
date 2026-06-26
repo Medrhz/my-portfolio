@@ -28,7 +28,7 @@ export default function Header({ resume, scrol }) {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          {["Projects", "Experience", "Skills", "Contact"].map((section) => (
+          {["Projects", "PFE", "Experience", "Skills", "Contact"].map((section) => (
             <a key={section} href={`#${section.toLowerCase()}`} className="hover:text-white transition-colors duration-300">
               {section}
             </a>
@@ -59,7 +59,7 @@ export default function Header({ resume, scrol }) {
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm text-slate-300">
-            {["Projects", "Experience", "Skills", "Contact"].map((section) => (
+            {["Projects", "PFE", "Experience", "Skills", "Contact"].map((section) => (
               <a key={section} href={`#${section.toLowerCase()}`} className="hover:text-white transition">
                 {section}
               </a>

@@ -7,6 +7,7 @@ import BusinessSolutions from "./components/BusinessSolutions.jsx";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects.jsx";
+import PFEProject from "./components/PFEProject.jsx";
 import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -34,6 +35,8 @@ export default function App() {
       {/* HERO */}
       <Hero resume={RESUME_URL} avatar={AVATAR} />
       {/* PROJECTS */} <Projects />
+      {/* PFE PROJECT */}
+      <PFEProject />
       {/* EXPERIENCE & EDUCATION */}
       <Experience />
       {/* SKILLS & TOOLS */}
