@@ -14,7 +14,8 @@ import {
   Users,
 } from "lucide-react";
 
-const REPORT_URL = "/Rapport%20PFE.pdf";
+// const REPORT_URL = "/Rapport%20PFE.pdf";
+const REPORT_URL = "/";
 const SOURCE_URL = "PUT_GITHUB_LINK_HERE";
 
 const technologies = [
