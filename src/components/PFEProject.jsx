@@ -20,7 +20,8 @@ import {
   Users,
 } from "lucide-react";
 
-const REPORT_URL = "/Rapport%20PFE.pdf";
+// const REPORT_URL = "/Rapport%20PFE.pdf";
+const REPORT_URL = "/";
 const SOURCE_URL = "PUT_GITHUB_LINK_HERE";
 const META_DESCRIPTION =
   "Plateforme de gestion de projets et de ressources avec suivi de charge et aide Ã  la planification, dÃ©veloppÃ©e avec Spring Boot, React, PostgreSQL, Docker et une architecture microservices.";
@@ -156,14 +157,19 @@ export default function PFEProject() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <a
+            {/* <a
+              disabled
               href={REPORT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-5 py-2 rounded-full flex items-center justify-center gap-2 text-sm font-medium shadow-md hover:opacity-90 transition">
               <FileText size={16} aria-hidden="true" />
               Consulter le rapport PFE
+<<<<<<< HEAD
             </a>
+=======
+            </a> */}
+>>>>>>> 621b0d40fb35c0be9c3ef5f89839a1299bbb06d9
             {/* <a
               href={SOURCE_URL}
               target="_blank"
