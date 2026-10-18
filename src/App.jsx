@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import avatarImg from "./assets/images/image.png";
+import avatarImg from "./assets/images/image pro.png";
 // import Freelance from "./components/Freelance";
 
 import BusinessSolutions from "./components/BusinessSolutions.jsx";
