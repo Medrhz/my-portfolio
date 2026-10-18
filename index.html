@@ -1,21 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/fav.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+    <link rel="alternate icon" href="/icons/navbar-logo.svg" />
+    <link rel="apple-touch-icon" href="/icons/navbar-logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Plateforme de gestion de projets et de ressources avec suivi de charge et aide à la planification, développée avec Spring Boot, React, PostgreSQL, Docker et une architecture microservices." />
-    <meta property="og:title" content="Projet PFE - Mohamed RHZIZA" />
-    <meta property="og:description" content="Plateforme de gestion de projets et de ressources avec suivi de charge et aide à la planification, développée avec Spring Boot, React, PostgreSQL, Docker et une architecture microservices." />
-    <meta property="og:image" content="/preview.png" />
-    <meta property="og:type" content="website" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /> -->
-
-    <title>Projet PFE - Mohamed RHZIZA</title>
+    <meta name="theme-color" content="#0f172a" />
+    <!-- seo:start -->
+    <title>Mohamed Rhziza | Software Engineer &amp; Full Stack Developer</title>
+    <meta name="description" content="Mohamed Rhziza, Software Engineer &amp; Full Stack Developer specializing in Java, Spring Boot, microservices and React. Open to roles and freelance projects." />
+    <!-- seo:end -->
+    <link rel="preload" href="/src/assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link data-hero-preload rel="preload" as="image" href="/src/assets/images/profile-640.webp" imagesrcset="/src/assets/images/profile-320.webp 320w, /src/assets/images/profile-640.webp 640w" imagesizes="(min-width: 1024px) 300px, (min-width: 640px) 256px, 224px" fetchpriority="high" />
+    <style>
+      html {
+        background: #0f172a;
+      }
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        box-sizing: border-box;
+        padding: 24px;
+        overflow: auto;
+        background: #0f172a;
+        color: #cbd5e1;
+        font-family: Inter, sans-serif;
+        text-align: center;
+      }
+      .initial-loader__content { width: 100%; max-width: 360px; }
+      .initial-loader__logo {
+        display: block;
+        width: 76px;
+        height: 76px;
+        margin: 0 auto;
+        animation: loader-logo-in 300ms ease-out both;
+      }
+      .initial-loader__dots { display: flex; justify-content: center; gap: 7px; margin-top: 20px; }
+      .initial-loader__dots span {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #a855f7;
+        animation: loader-dot 900ms ease-in-out infinite;
+      }
+      .initial-loader__dots span:nth-child(2) { animation-delay: 150ms; }
+      .initial-loader__dots span:nth-child(3) { animation-delay: 300ms; }
+      .initial-loader__status { margin: 16px 0 0; font-size: 13px; line-height: 1.6; color: #94a3b8; }
+      .initial-loader__help { margin: 16px 0 0; font-size: 13px; line-height: 1.7; }
+      .initial-loader a { color: #c7d2fe; overflow-wrap: anywhere; }
+      .initial-loader a:focus-visible { outline: 2px solid #c7d2fe; outline-offset: 4px; border-radius: 4px; }
+      .initial-loader__retry { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; }
+      .initial-loader[data-state="error"] .initial-loader__dots { display: none; }
+      .initial-loader[data-state="error"] .initial-loader__logo { animation: none; }
+      @keyframes loader-logo-in { from { opacity: 0.4; } to { opacity: 1; } }
+      @keyframes loader-dot {
+        0%, 70%, 100% { opacity: 0.35; transform: translateY(0); }
+        35% { opacity: 1; transform: translateY(-3px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .initial-loader__logo, .initial-loader__dots span { animation: none; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="initial-loader" data-initial-loader>
+        <div class="initial-loader__content">
+          <img class="initial-loader__logo" src="/icons/navbar-logo.svg" alt="MR — Mohamed Rhziza" width="76" height="76" />
+          <div class="initial-loader__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="initial-loader__status" role="status">Loading portfolio…</p>
+          <div class="initial-loader__help" data-loader-error hidden>
+            <a class="initial-loader__retry" href="">Try again</a>
+            <p>Or contact <a href="mailto:mohamed.rhziza@gmail.com">mohamed.rhziza@gmail.com</a>.</p>
+          </div>
+          <noscript>
+            <style>
+              .initial-loader__logo, .initial-loader__dots span { animation: none; }
+              .initial-loader__dots, .initial-loader__status { display: none; }
+            </style>
+            <p class="initial-loader__help">Enable JavaScript to explore the interactive portfolio. Contact <a href="mailto:mohamed.rhziza@gmail.com">mohamed.rhziza@gmail.com</a> or <a href="/Mohamed_RHZIZA.pdf">download my CV</a>.</p>
+          </noscript>
+        </div>
+      </main>
+    </div>
+    <script>
+      (() => {
+        function showLoadingError() {
+          const loader = document.querySelector("[data-initial-loader]");
+          if (!loader) return;
+          loader.dataset.state = "error";
+          loader.querySelector('[role="status"]').textContent = "The portfolio could not load. Please try again.";
+          loader.querySelector("[data-loader-error]").hidden = false;
+        }
+        window.addEventListener("error", (event) => {
+          if (event.target?.tagName === "SCRIPT" || event.error) showLoadingError();
+        }, true);
+        window.addEventListener("unhandledrejection", showLoadingError);
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

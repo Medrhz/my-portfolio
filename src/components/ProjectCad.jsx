@@ -11,7 +11,7 @@ export default function ProjectCad({ project, index }) {
       <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
       <p className="text-sm text-slate-400 mb-4">{project.desc}</p>
       <div className="flex flex-wrap gap-2 mb-4">
-        {project.tech.map((t, index) => (
+        {project.tech.map((t) => (
           <span key={t} className="px-2 py-1 text-xs rounded-full bg-indigo-500/20 text-indigo-200 font-medium">
             {t}
           </span>

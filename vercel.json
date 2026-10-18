@@ -1,8 +1,25 @@
 {
-  "rewrites": [
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/pfe/index.html", "destination": "/pfe", "permanent": true }
+  ],
+  "headers": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/pfe",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     }
+  ],
+  "rewrites": [
+    { "source": "/pfe", "destination": "/pfe/index.html" },
+    { "source": "/pfe/", "destination": "/pfe/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

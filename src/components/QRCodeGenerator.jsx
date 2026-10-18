@@ -1,17 +1,35 @@
-import { useEffect, useState } from "react";
-import QRCode from "qrcode";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Download, Copy } from "lucide-react";
+
+const focusStyle = "focus-visible:ring-2 focus-visible:ring-indigo-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:transition-none";
 
 export default function QRCodeGenerator({ url = "https://my-portfolio-wrrh.vercel.app/", size = 180 }) {
   const [dataUrl, setDataUrl] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const container = useRef(null);
 
   useEffect(() => {
-    QRCode.toDataURL(url, {
-      width: size,
-      margin: 1,
-      color: { dark: "#6366f1", light: "#0f172a" }, // indigo with dark bg
-    }).then(setDataUrl);
+    let active = true;
+    function generate() {
+      import("qrcode").then(({ default: QRCode }) => QRCode.toDataURL(url, {
+        width: size,
+        margin: 4,
+        color: { dark: "#0f172a", light: "#ffffff" },
+      })).then((value) => {
+        if (active) setDataUrl(value);
+      }).catch(() => {
+        if (active) setFeedback("QR code could not be generated. Please try again.");
+      });
+    }
+    const observer = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        generate();
+      }
+    }, { rootMargin: "400px" }) : null;
+    if (observer && container.current) observer.observe(container.current);
+    else generate();
+    return () => { active = false; observer?.disconnect(); };
   }, [url, size]);
 
   const handleDownload = () => {
@@ -22,39 +40,35 @@ export default function QRCodeGenerator({ url = "https://my-portfolio-wrrh.verce
   };
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(url);
+    try {
+      await navigator.clipboard.writeText(url);
+      setFeedback("Portfolio link copied.");
+    } catch {
+      setFeedback("Could not copy the link. Please try again.");
+    }
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="mt-10 flex flex-col items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(99,102,241,0.2)] hover:shadow-[0_0_25px_rgba(147,51,234,0.25)] transition-all duration-700">
-      {dataUrl ? (
-        <motion.img
-          src={dataUrl}
-          alt="QR Code"
-          width={size}
-          height={size}
-          className="rounded-lg shadow-md border border-indigo-500/20"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 120 }}
-        />
-      ) : (
-        <p className="text-slate-400 text-sm">Generating QR...</p>
-      )}
-
-      <p className="text-xs text-slate-400 italic">📱 Scan to visit my portfolio</p>
-
-      <div className="flex gap-3">
-        <button onClick={handleDownload} className="flex items-center gap-1 px-3 py-1 rounded-md text-sm bg-indigo-600/80 hover:bg-indigo-700 text-white transition">
-          <Download size={14} /> Download
-        </button>
-        <button onClick={handleCopy} className="flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/10 transition">
-          <Copy size={14} /> Copy
-        </button>
+    <div ref={container} className="mt-6 border-t border-white/10 pt-6">
+      <div className="flex flex-col items-center gap-4 sm:flex-row md:flex-col lg:flex-row">
+        {dataUrl ? (
+          <img src={dataUrl} alt="QR code linking to Mohamed Rhziza's portfolio" width={size} height={size} className="shrink-0 max-w-full rounded-md" />
+        ) : (
+          <div style={{ width: size, height: size }} className="flex shrink-0 max-w-full items-center justify-center text-center"><p className="text-slate-400 text-sm" role="status">{feedback || "Generating QR code..."}</p></div>
+        )}
+        <div className="min-w-0 text-center sm:text-left md:text-center lg:text-left">
+          <p className="text-xs leading-relaxed text-slate-400">Scan to explore my portfolio</p>
+          <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start md:justify-center lg:justify-start">
+            <button type="button" onClick={handleDownload} disabled={!dataUrl} aria-label="Download portfolio QR code" className={`inline-flex min-h-11 items-center gap-1.5 px-3 rounded-md text-xs border border-white/15 text-slate-200 hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed ${focusStyle}`}>
+              <Download size={14} aria-hidden="true" /> Download
+            </button>
+            <button type="button" onClick={handleCopy} aria-label="Copy portfolio link" className={`inline-flex min-h-11 items-center gap-1.5 px-3 rounded-md text-xs border border-white/15 text-slate-200 hover:bg-white/10 ${focusStyle}`}>
+              <Copy size={14} aria-hidden="true" /> Copy
+            </button>
+          </div>
+        </div>
       </div>
-    </motion.div>
+      <p role="status" className="mt-2 text-xs text-slate-400">{dataUrl ? feedback : ""}</p>
+    </div>
   );
 }

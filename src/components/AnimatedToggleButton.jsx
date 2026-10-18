@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 export default function AnimatedToggleButton({ labelOn = "HIRED ✓", labelOff = "Hire Me", className = "", onClick, initial = false }) {
   const [on, setOn] = useState(initial);
 
-  const handleToggle = (e) => {
+  const handleToggle = () => {
     const next = !on;
     setOn(next);
     if (onClick) onClick(next);

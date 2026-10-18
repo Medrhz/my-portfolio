@@ -1,23 +1,10 @@
-import { motion } from "framer-motion";
-export default function TechnicCard({ skill, i }) {
+export default function TechnicCard({ skill }) {
   const Icon = skill.icon;
-  return (
-    <motion.div key={i} initial={{ width: 0 }} whileInView={{ width: `${skill.level}%` }} transition={{ duration: 3, ease: "easeOut" }} viewport={{ once: true }}>
-      <div key={i} className="mb-4">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-white/5 rounded-md border border-white/10">
-              <Icon className="text-indigo-400" size={18} />
-            </div>
-            <span className="text-slate-200 text-sm font-medium">{skill.name}</span>
-          </div>
-          <span className="text-sm text-slate-400">{skill.level}%</span>
-        </div>
 
-        <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-          <div className="h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-700" style={{ width: `${skill.level}%` }}></div>
-        </div>
-      </div>
-    </motion.div>
+  return (
+    <li className="flex min-h-[104px] lg:min-h-[140px] min-w-0 flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-slate-900/60 px-3 py-4 lg:py-6 text-center transition-colors duration-200 hover:border-indigo-400/30 hover:bg-slate-800/70 motion-reduce:transition-none">
+      <Icon size={28} aria-hidden="true" className="shrink-0 text-indigo-400" />
+      <span className="w-full break-words text-sm font-medium leading-snug text-slate-200">{skill.name}</span>
+    </li>
   );
 }

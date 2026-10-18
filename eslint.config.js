@@ -2,6 +2,8 @@ import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import importPlugin from "eslint-plugin-import";
+import react from "eslint-plugin-react";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
@@ -18,10 +20,12 @@ export default defineConfig([
         sourceType: "module",
       },
     },
-    plugins: { import: importPlugin },
+    plugins: { import: importPlugin, react },
+    settings: { "import/resolver": { node: { extensions: [".js", ".jsx", ".mjs"] } } },
     rules: {
       "no-unused-vars": ["warn", { varsIgnorePattern: "^[A-Z_]" }],
       "react/jsx-uses-react": "off",
+      "react/jsx-uses-vars": "error",
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "error",
       "import/named": "error",
@@ -33,5 +37,10 @@ export default defineConfig([
     //     jsx: true,
     //   },
     // },
+  },
+  {
+    files: ["eslint.config.js", "vite.config.js"],
+    // The Node resolver predates package exports; both entry points are checked by Node/Vite.
+    rules: { "import/no-unresolved": ["error", { ignore: ["^eslint/config$", "^@vitejs/plugin-react$"] }] },
   },
 ]);

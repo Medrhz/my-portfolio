@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import avatarImg from "./assets/images/image pro.png";
-// import Freelance from "./components/Freelance";
+import { lazy, Suspense, useEffect, useState } from "react";
+import avatarImg from "./assets/images/profile-640.webp";
+import avatarSmall from "./assets/images/profile-320.webp";
+import { updatePageMetadata } from "./seo.js";
 
 import BusinessSolutions from "./components/BusinessSolutions.jsx";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects.jsx";
-import PFEProject from "./components/PFEProject.jsx";
 import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -14,8 +14,7 @@ import BackLighit from "./components/BackLighit.jsx";
 import Experience from "./components/Experience.jsx";
 
 const RESUME_URL = "/Mohamed_RHZIZA.pdf";
-// const AVATAR = "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&auto=format&fit=crop";
-const AVATAR = avatarImg;
+const PFEProject = lazy(() => import("./components/PFEProject.jsx"));
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,8 +22,13 @@ export default function App() {
   const isPFEPage = currentPath === "/pfe";
 
   useEffect(() => {
+    updatePageMetadata(isPFEPage);
+  }, [isPFEPage]);
+
+  useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -34,16 +38,18 @@ export default function App() {
       <Header resume={RESUME_URL} scrol={scrolled} />
 
       {isPFEPage ? (
-        <PFEProject />
+        <Suspense fallback={<main className="mx-auto max-w-6xl px-6 pt-32 pb-20" aria-busy="true"><p role="status">Loading project details…</p></main>}>
+          <PFEProject />
+        </Suspense>
       ) : (
-        <>
-          <Hero resume={RESUME_URL} avatar={AVATAR} />
+        <main>
+          <Hero avatar={avatarImg} avatarSmall={avatarSmall} />
           <Projects />
           <Experience />
           <Skills />
           <BusinessSolutions />
           <Contact />
-        </>
+        </main>
       )}
 
       <Footer />

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   BarChart3,
@@ -23,9 +22,6 @@ import {
 // const REPORT_URL = "/Rapport%20PFE.pdf";
 const REPORT_URL = "/";
 const SOURCE_URL = "PUT_GITHUB_LINK_HERE";
-const META_DESCRIPTION =
-  "Plateforme de gestion de projets et de ressources avec suivi de charge et aide Ã  la planification, dÃ©veloppÃ©e avec Spring Boot, React, PostgreSQL, Docker et une architecture microservices.";
-
 const technologies = ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "Eureka", "Spring Cloud Gateway", "OpenFeign", "React", "TypeScript", "Material UI", "Docker"];
 
 const problems = [
@@ -111,18 +107,6 @@ function SectionHeading({ id, eyebrow, title, description }) {
 }
 
 export default function PFEProject() {
-  useEffect(() => {
-    document.title = "Projet PFE - Mohamed RHZIZA";
-
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", META_DESCRIPTION);
-  }, []);
-
   return (
     <main className="pt-28 pb-20 bg-[#0f172a]/70 backdrop-blur-md text-white">
       <section className="max-w-6xl mx-auto px-6 space-y-12">
@@ -139,13 +123,13 @@ export default function PFEProject() {
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-            Conception et DÃ©veloppement dâ€™une Plateforme de Gestion de Projets et de Ressources avec Suivi de Charge et Aide Ã  la Planification
+            Conception et DÃ©veloppement dâ€™une Plateforme de Gestion de Projets et de Ressources avec Suivi de Charge et Aide Ã&nbsp; la Planification
           </h1>
 
           <p className="text-sm text-indigo-200 mb-4">Auteur : Mohamed RHZIZA</p>
           <p className="text-slate-400 max-w-4xl mb-6">
             Plateforme web de gestion de projets et de ressources basÃ©e sur une architecture microservices. Elle permet la gestion des projets, des tÃ¢ches, des ressources, le suivi de charge de
-            travail et lâ€™aide Ã  la planification.
+            travail et lâ€™aide Ã&nbsp; la planification.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-7">
@@ -224,7 +208,7 @@ export default function PFEProject() {
             </div>
 
             <p className="text-slate-400 max-w-4xl mb-6">
-              La plateforme centralise la gestion des projets, des tÃ¢ches, lâ€™allocation des ressources, le suivi de charge et lâ€™aide Ã  la dÃ©cision afin de rendre la planification plus claire,
+              La plateforme centralise la gestion des projets, des tÃ¢ches, lâ€™allocation des ressources, le suivi de charge et lâ€™aide Ã&nbsp; la dÃ©cision afin de rendre la planification plus claire,
               mesurable et collaborative.
             </p>
 

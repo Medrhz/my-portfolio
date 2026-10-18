@@ -1,4 +1,3 @@
-import { SiAngular, SiCoffeescript, SiJquery, SiLaravel, SiPhp, SiReact, SiSpringboot, SiTailwindcss, SiTypescript, SiVuedotjs } from "react-icons/si";
 import Technical from "./Technic";
 import ToolsSection from "./ToolsSection";
 
